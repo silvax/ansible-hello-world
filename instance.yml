@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    become: true
+
+    tasks:
+    - debug:
+        msg:
+        - "Hello word, this is a test of Ansible Automation"
+        
+
+    - name: Display all variables/facts known for a host
+      debug:
+        var: hostvars[inventory_hostname]
+        verbosity: 4
